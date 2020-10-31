@@ -1,13 +1,10 @@
-#variable "ibm_username" {
- # description = "user name."
-#}
-#variable "ibm_api_key" {
-#  description = "API key."
-#}
-provider "ibm" {
-
+variable "ibm_username" {
+  description = "user name."
 }
-#provider "ibm" {
-#  softlayer_username = "${var.ibm_username}"
-#  softlayer_api_key = "${var.ibm_api_key}"
-#}
+variable "ibm_api_key" {
+  description = "API key."
+}
+
+provider ibm {
+  ibmcloud_api_key = var.ibmcloud_api_key
+}
