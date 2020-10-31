@@ -4,8 +4,10 @@ variable "ibm_username" {
 variable "ibm_api_key" {
   description = "API key."
 }
-
 provider "ibm" {
-  softlayer_username = "${var.ibm_username}"
-  softlayer_api_key = "${var.ibm_api_key}"
+
 }
+#provider "ibm" {
+#  softlayer_username = "${var.ibm_username}"
+#  softlayer_api_key = "${var.ibm_api_key}"
+#}
