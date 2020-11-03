@@ -58,10 +58,11 @@ provider "helm" {
 
 
  
-resource "helm_release" "cassandra" {
+#resource "helm_release" "cassandra" {
   # depends_on = ["data.ibm_container_cluster.k8s"]
-   name      = "cassandratestwarm"
-   repository = "https://charts.bitnami.com/ibm"
-   chart     = "cassandra"
-   #namespace = "test"
-}
+ #  name      = "cassandratestwarm"
+ #  repository = "https://charts.bitnami.com/ibm"
+ #  chart     = "cassandra"
+ #  namespace = "test"
+ #  create_namespace =false
+#}
