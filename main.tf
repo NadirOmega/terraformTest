@@ -47,7 +47,6 @@ provider kubernetes {
 
 provider "helm" {
   kubernetes {
-  config_path = "${data.ibm_container_cluster_config.cluster.config_file_path}"
   load_config_file       = false
     host                   = "${data.ibm_container_cluster_config.cluster.host}"
     client_certificate     = "${data.ibm_container_cluster_config.cluster.admin_certificate}"
