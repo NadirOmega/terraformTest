@@ -1,7 +1,7 @@
 
 
 provider "ibm" {
-  ibmcloud_api_key = "qTqXQBVLLncav5JPO2Ck2f4x7vjtBhnkuSJ-pa4lJy5E"
+  ibmcloud_api_key = "${var.ibm_api_key}
 }
 
 data ibm_resource_group group {
@@ -63,8 +63,8 @@ resource "helm_release" "cassandra" {
    name      = "CassandraTestHelm"
    force_update= true
      wait       = true
-  timeout    = 200
+   timeout    = 200
    repository = "https://charts.bitnami.com/bitnami"
-   chart     = "bitnami/cassandra"
+   chart     = "cassandra"
    namespace = "ververica32"
 }
