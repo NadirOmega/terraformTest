@@ -64,7 +64,7 @@ resource "helm_release" "cassandra" {
    force_update= true
      wait       = true
    timeout    = 200
-   repository = "https://charts.bitnami.com/bitnami"
+   repository = "https://charts.bitnami.com/ibm"
    chart     = "cassandra"
    #namespace = "ververica32"
 }
