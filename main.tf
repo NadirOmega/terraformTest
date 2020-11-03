@@ -20,7 +20,7 @@ data ibm_resource_group group {
 ##############################################################################
 
 data ibm_container_cluster_config cluster {
-  cluster_name_id   = "kb-bnpp-itgp-data06-yl-kc-dev"
+  cluster_name_id   = "cluster-tests-apache-kc-didier"
   resource_group_id = "4d16a8e0e25e4ff6b33045ec2a43ddf5"
   admin             = true
 }
@@ -58,11 +58,11 @@ provider "helm" {
 
 
  
-#resource "helm_release" "cassandra" {
-  # depends_on = ["data.ibm_container_cluster.k8s"]
- #  name      = "cassandratestwarm"
- #  repository = "https://charts.bitnami.com/ibm"
- #  chart     = "cassandra"
- #  namespace = "test"
- #  create_namespace =false
-#}
+resource "helm_release" "cassandra" {
+   depends_on = ["data.ibm_container_cluster.k8s"]
+   name      = "cassandratestwarm"
+   repository = "https://charts.bitnami.com/ibm"
+   chart     = "cassandra"
+   namespace = "test"
+   create_namespace =true
+}
