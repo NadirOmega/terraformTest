@@ -62,9 +62,9 @@ resource "helm_release" "cassandra" {
   # depends_on = ["data.ibm_container_cluster.k8s"]
    name      = "cassandratestwarm"
    force_update= true
-     wait       = true
+    wait       = true
    timeout    = 200
    repository = "https://charts.bitnami.com/ibm"
    chart     = "cassandra"
-   #namespace = "ververica32"
+   namespace = "test"
 }
