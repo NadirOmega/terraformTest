@@ -34,10 +34,10 @@ data ibm_container_cluster_config cluster {
 
 provider kubernetes {
   load_config_file       = false
-  host                   = data.ibm_container_cluster_config.cluster.host
-  client_certificate     = data.ibm_container_cluster_config.cluster.admin_certificate
-  client_key             = data.ibm_container_cluster_config.cluster.admin_key
-  cluster_ca_certificate = data.ibm_container_cluster_config.cluster.ca_certificate
+  host                   = "${data.ibm_container_cluster_config.cluster.host}"
+  client_certificate     = "${}"data.ibm_container_cluster_config.cluster.admin_certificate}"
+  client_key             = "${}"data.ibm_container_cluster_config.cluster.admin_key}"
+  cluster_ca_certificate = "${}"data.ibm_container_cluster_config.cluster.ca_certificate}"
 }
 
 
@@ -49,10 +49,10 @@ provider "helm" {
   kubernetes {
   config_path = "${data.ibm_container_cluster_config.cluster.config_file_path}"
   load_config_file       = false
-    host                   = data.ibm_container_cluster_config.cluster.host
-    client_certificate     = data.ibm_container_cluster_config.cluster.admin_certificate
-    client_key             = data.ibm_container_cluster_config.cluster.admin_key
-    cluster_ca_certificate = data.ibm_container_cluster_config.cluster.ca_certificate
+    host                   = "${data.ibm_container_cluster_config.cluster.host}"
+    client_certificate     = "${data.ibm_container_cluster_config.cluster.admin_certificate}"
+    client_key             = "${data.ibm_container_cluster_config.cluster.admin_key}"
+    cluster_ca_certificate = "${data.ibm_container_cluster_config.cluster.ca_certificate}"
 }
 }
 
