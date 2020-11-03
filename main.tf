@@ -71,4 +71,8 @@ resource "helm_release" "cassandra" {
    chart     = "cassandra"
    timeout = 600
    cleanup_on_fail = true   
+  set {
+    name  = "persistence.enabled"
+    value = "false"
+  }
 }
