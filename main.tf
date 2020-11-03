@@ -21,7 +21,7 @@ data ibm_resource_group group {
 
 data ibm_container_cluster_config cluster {
   cluster_name_id   = "kb-bnpp-itgp-data06-yl-kc-dev"
-  resource_group_id = data.ibm_resource_group.group.id
+  resource_group_id = "${data.ibm_resource_group.group.idvar.ami}"
   admin             = true
 }
 
