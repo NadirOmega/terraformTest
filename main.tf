@@ -56,11 +56,15 @@ provider "helm" {
 }
 }
 
-
+#data "helm_repository" "cassandra_repo" {
+ # namespace= "test"
+ # name = "incubator"
+ # url  = "https://kubernetes-charts-incubator.storage.googleapis.com"
+#}
  
 resource "helm_release" "cassandra" {
-   #create_namespace =true
-   #namespace = "test"
+   create_namespace =false
+   namespace = "test"
    #depends_on = ["data.ibm_container_cluster.k8s"]
    name      = "cassandratestwarm"
    repository = "https://charts.bitnami.com/ibm"
