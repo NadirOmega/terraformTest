@@ -1,7 +1,7 @@
 
 
 provider "ibm" {
-  ibmcloud_api_key = var.ibm_api_key
+  ibmcloud_api_key = "qTqXQBVLLncav5JPO2Ck2f4x7vjtBhnkuSJ-pa4lJy5E"
 }
 
 data ibm_resource_group group {
