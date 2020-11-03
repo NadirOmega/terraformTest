@@ -62,17 +62,17 @@ provider "helm" {
  # url  = "https://kubernetes-charts-incubator.storage.googleapis.com"
 #}
  
-resource "helm_release" "cassandra" {
-   create_namespace =true
-   namespace = "test2"
+#resource "helm_release" "cassandra" {
+#   create_namespace =true
+ #  namespace = "test2"
    #depends_on = ["data.ibm_container_cluster.k8s"]
-   name      = "cassandratestwarm2"
-  repository = "https://charts.bitnami.com/ibm"
-   chart     = "cassandra"
-   timeout = 600
-   cleanup_on_fail = true   
-  set {
-    name  = "persistence.enabled"
-    value = "false"
-  }
+  # name      = "cassandratestwarm2"
+  #repository = "https://charts.bitnami.com/ibm"
+  # chart     = "cassandra"
+  # timeout = 600
+  # cleanup_on_fail = true   
+  #set {
+  #  name  = "persistence.enabled"
+  #  value = "false"
+  #}
 }
